@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>House Expenses</title>
+<meta name="theme-color" content="#1d2a33">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="House Expenses">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<style>
+  html, body { margin: 0; height: 100%; background: #1d2a33; overflow: hidden; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; }
+  #loading { position: fixed; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;
+             gap: 14px; color: #fff; font-size: 15px; opacity: .85; }
+  #loading img { width: 72px; height: 72px; border-radius: 16px; }
+  iframe { position: fixed; top: 0; left: 0; width: 100%; height: 100%; height: 100dvh; border: 0; background: transparent; }
+</style>
+</head>
+<body>
+  <div id="loading"><img src="icon-192.png" alt=""><div>Loading House Expenses…</div></div>
+  <iframe id="app" title="House Expenses"
+          allow="clipboard-read; clipboard-write; web-share; camera"
+          src="https://script.google.com/macros/s/AKfycbzqLzD1p7RpILcV0HjrWMRXTWy15tCpSWyazho_gN3YJ-N4e9tO4l8Q4-eJNchtpzzi/exec"></iframe>
+  <script>
+    // Hide the loading screen once the app has loaded
+    document.getElementById('app').addEventListener('load', function () {
+      document.getElementById('loading').style.display = 'none';
+    });
+  </script>
+</body>
+</html>
